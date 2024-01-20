@@ -1,0 +1,33 @@
+Author: Joonas Kärnä, 50218075, joonas.karna@tuni.fi
+Matopelin toiminta
+
+Käyttäjä voi ohjata matoa joko käyttämällä wasd näppäimiä eli w ohjaa matoa ylös, a ohjaa matoa vasemmalle, s ohjaa matoa alas
+ja d ohjaa matoa oikealle. Matoa voi ohjata myös ruudulle piirretyistä nappuloista joissa nuolet kuvaamaan madon suuntaa.
+Mato liikkuu automaattisesti käyttäjän syöttämään suuntaan tosin heti pelin alettua oletus suuntana on madon kulkeminen alaspäin.
+Käyttäjä voi valita pelilaudan koon, pienin laudan koko voi olla 15x15 "neliötä" tai 30x30 "neliötä". Jos mato täyttää kaikki ruudut
+niin tällöin peli on voitettu. Mikäli mato osuu pelialueen reunoihin tai itseensä, niin silloin peli on hävitty. Käyttäjä voi 
+resetoida pelin ja aloittaa alusta pelin kesken tai häviön tullessa. Käyttäjä voi myös laittaa pelin pauselle.
+
+peli täyttää minimivaatimukset:
+1. Peli kysyy käyttäjältä satunnaislukugeneraattorin siemenlukua.
+2. Pelialueen kokoa (erikseen leveyttä ja korkeutta) voidaan muutella.
+3. Pelin pelaamiseksi pelialue ja mato näytetään käyttäjälle.
+4.Pelialueelle tulee näkyviin mato (aluksi vain pää) sekä ruoka. Madon ja ruoan pitää olla graafisia käyttöliittymäkomponentteja 
+(esim. suorakulmioita/neliöitä/etikettejä), ei pelkästään tekstiä.
+5.Madon pään, hännän ja keskiruumiin sekä ruoan pitää olla jollakin tavalla erilaisia
+6.Mato kasvaa, kun se syö. Tällöin myös ruoka häviää, mutta uusi ruoka ilmestyy johonkin uuteen kohtaan.
+7. Käyttäjän pitää pystyä valitsemaan madon etenemissuunta (esim. näppäinkomennoilla tai painonapeilla).
+8. Mato liikkuu itsestään viimeksi valittuun suuntaan, joten tarvitset pelissä ajastimen.
+9. Peli ilmoittaa voitosta/häviöstä.
+10. Pelin pystyy aloittamaan uudelleen alusta (reset). Tämän tulee olla mahdollista pelin päätyttyä ja myös kesken pelin.
+
+
+Peliin toteutetut lisäominaisuudet:
+1. Peliruudukon kokoa voi säätää käyttöliittymän kautta.
+2. Ohjelma kertoo madon pituuden ja tieto päivittyy tasaisesti.
+3. Madon eri osilla on värit liukuvasti, tämä on totetutettu niin, että pää on aina väriä rgb(0,0,255) ja häntä rgb(0,255,255)
+ja ruumiin osat väriä (0,liukuva_väri,255), väriä muutetaan 10 yksikön verran ja kun kaikki värit on käytetty käydään värit
+taas läpi samoin kuin aikaisemmin.
+8. Pelissä on pistelasku, yksi ruoan syönti on yksi piste ja nämä pisteet päivittyvät käyttäjälle. Samoin madon liike nopeutuu
+kun se on syönyt ruoan mutta nopein käärmeen nopeus on 200 millisekuntia.
+11. Pelissä on pause nappula milloin peli pysähtyy eikä käyttäjä pysty tekemään komentoja sen aikana.
