@@ -1,0 +1,71 @@
+/* Background color */
+.root {
+    -fx-background-color: #f0f4f9;
+}
+
+/* MenuButton */
+.menu-button {
+    -fx-background-color: #0087c1;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 5;
+    -fx-padding: 0.8em;
+    -fx-font-size: 1.1em;
+    -fx-cursor: hand;
+    -fx-min-width: 120px; /* Sets the minimum width for the menu button */
+}
+
+.menu-button:hover {
+    -fx-background-color: #005e8e;
+    -fx-background-radius: 0;
+    -fx-text-fill: #ffffff; /* Sets the font color to white on hover */
+}
+
+/* Button */
+.button {
+    -fx-background-color: #0087c1;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 5;
+    -fx-padding: 0.8em;
+    -fx-font-size: 1.1em;
+    -fx-cursor: hand;
+    -fx-min-width: 120px; /* Sets the minimum width for all buttons */
+    -fx-transition-duration: 0.5s;
+}
+.button:hover {
+    -fx-background-color: #005e8e;
+    -fx-background-radius: 0;
+}
+
+.button:pressed {
+    -fx-background-color: #0087c1;
+    -fx-background-radius: 5;
+}
+/* Label */
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* TableView */
+.table-view {
+    -fx-table-cell-border-color: transparent;
+}
+
+/* TableColumn */
+.table-column-header {
+    -fx-background-color: #0087c1;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 1.1em;
+}
+
+/* TreeTableView */
+.tree-table-view {
+    -fx-table-cell-border-color: transparent;
+}
+
+/* TreeTableColumn */
+.tree-table-column-header {
+    -fx-background-color: #0087c1;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 1.1em;
+}
+

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="829.0" prefWidth="854.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fi.tuni.prog3.sisu.CourseController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <TabPane prefHeight="845.0" prefWidth="837.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="progressTab" onSelectionChanged="#swtichToProgress" text="Student info">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="376.0" prefWidth="561.0">
+                     <children>
+                        <Text fx:id="studentNameText" layoutX="8.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="195.89453125" />
+                        <Text fx:id="studentNumberText" layoutX="8.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student number:" wrappingWidth="195.89453125" />
+                        <Button fx:id="progressButton" layoutX="8.0" layoutY="158.0" mnemonicParsing="false" onAction="#showProgress" prefHeight="25.0" prefWidth="140.0" text="Show progress">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="studentNameLabel" layoutX="160.0" layoutY="17.0" text="Label" />
+                        <Label fx:id="studentNumberLabel" layoutX="160.0" layoutY="43.0" text="Label" />
+                        <TableView fx:id="progressTableView" layoutX="8.0" layoutY="219.0" prefHeight="412.0" prefWidth="304.0">
+                          <columns>
+                            <TableColumn fx:id="progressColumn" prefWidth="160.0" text="Courses selected" />
+                              <TableColumn fx:id="statusColumn" prefWidth="143.0" text="Status" />
+                          </columns>
+                        </TableView>
+                        <Text fx:id="studentDegreeText" layoutX="407.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selected degree">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="studentsProgammeLabel" layoutX="407.0" layoutY="41.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="196.0" layoutY="117.0" />
+                        <Label fx:id="studentDegreeLabel" layoutX="407.0" layoutY="41.0" text="No chosen degree">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <MenuButton fx:id="degreesMenuButton" layoutX="406.0" layoutY="152.0" mnemonicParsing="false" onMouseClicked="#clearPrograms" prefHeight="25.0" prefWidth="184.0" text="Available Degrees" />
+                        <Button fx:id="programsButton" layoutX="600.0" layoutY="152.0" mnemonicParsing="false" onAction="#showPrograms" prefHeight="25.0" prefWidth="140.0" text="show programs">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <TableView fx:id="programmesTable" layoutX="406.0" layoutY="219.0" onMouseClicked="#handleTableViewClick" prefHeight="412.0" prefWidth="353.0">
+                          <columns>
+                            <TableColumn fx:id="programmesColumn" prefWidth="311.0" text="Available programmes" />
+                          </columns>
+                        </TableView>
+                        <Text fx:id="studentProgrammeText" layoutX="408.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selected programme">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="studentProgrammeLabel" layoutX="407.0" layoutY="89.0" text="No chosen programme">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="removeCourseButton" layoutX="8.0" layoutY="648.0" mnemonicParsing="false" onAction="#removeCourse" prefHeight="25.0" prefWidth="140.0" text="Remove course" />
+                        <Label fx:id="completedStudiesLabel" layoutX="14.0" layoutY="124.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Text fx:id="studentNameText1" layoutX="8.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expected graduating year:" wrappingWidth="152.89453125" />
+                        <Label fx:id="expectedGYearLabel" layoutX="160.0" layoutY="68.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="courseTab" text="Courses and structure">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="logoutButton" layoutX="14.0" layoutY="721.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="140.0" text="logout" />
+                        <Button fx:id="addCourseButton" layoutX="420.0" layoutY="143.0" mnemonicParsing="false" onAction="#addCourse" prefHeight="25.0" prefWidth="140.0" text="Add Course" />
+                        <TreeTableView fx:id="coursesTreeTable" layoutY="9.0" prefHeight="510.0" prefWidth="384.0">
+                          <columns>
+                            <TreeTableColumn fx:id="coursesColumn" prefWidth="346.0" text="Program structure" />
+                          </columns>
+                        </TreeTableView>
+                        <Label fx:id="courseNameLabel" layoutX="420.0" layoutY="31.0" text="No chosen course" />
+                        <Label fx:id="courseStatusLabel" layoutX="420.0" layoutY="87.0" text="No chosen course" />
+                        <Text layoutX="420.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="420.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course status">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="addCourseButton1" layoutX="14.0" layoutY="528.0" mnemonicParsing="false" onAction="#ShowDegreeStructure" prefHeight="25.0" prefWidth="140.0" text="Show courses" />
+                        <Button fx:id="completeCourseButton" layoutX="594.0" layoutY="143.0" mnemonicParsing="false" onAction="#completeCourse" prefHeight="25.0" prefWidth="140.0" text="Complete Course" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Student settings">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="saveButton" layoutX="206.0" layoutY="183.0" mnemonicParsing="false" onAction="#saveStudentSettings" text="Save changes">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Text layoutX="328.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="studentNumberInput" layoutX="407.0" layoutY="122.0" promptText="e.g &quot;Mikko Mallikas&quot;" />
+                        <Text layoutX="197.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expected Graduating Year">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="studentNameInput" layoutX="407.0" layoutY="44.0" promptText="enter a nubmer e.g 2025" />
+                        <Text layoutX="261.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student number">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="studentGYearInput" layoutX="407.0" layoutY="85.0" promptText="enter a nubmer e.g 1123" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

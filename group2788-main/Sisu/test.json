@@ -1,0 +1,19 @@
+{
+  "name": "Timo Testaaja",
+  "degreeGroupId": "uta-tohjelma-1705",
+  "studentNumber": 4,
+  "selectedDegree": "Tietojenkäsittelytieteiden kandidaattiohjelma",
+  "selectedProgram": "",
+  "programsChosen": true,
+  "selectedCourses": [
+    "Ranska 6 - Työskentele ranskaksi",
+    "Genetiikka"
+  ],
+  "completedCourses": [
+    "Ranska 6 - Työskentele ranskaksi",
+    "Genetiikka"
+  ],
+  "completedCredits": 7,
+  "expectedGraduatingYear": 2025,
+  "modules": {}
+}
